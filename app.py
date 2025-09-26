@@ -4,7 +4,7 @@ from commands.factory import CommandFactory
 from utils import dynamic_form
 
 # ---------------- جلب أسماء الجداول من قاعدة البيانات ----------------
-db = Database(db="shop")
+db = Database(db="real_estate")
 db.cursor.execute("SHOW TABLES")
 tables = [row[f"Tables_in_{db.database}"] for row in db.cursor.fetchall()]
 
@@ -28,7 +28,7 @@ data = dynamic_form(f"{table_name}")  # أي جدول
 
 if data and st.button("Add Row"):
     try:
-        CommandFactory.create_command("add_row", "products", data).execute()
+        CommandFactory.create_command("add_row", table_name, data).execute()
         st.success("✅ Added Successfully")
     except Exception as e:
         st.error(f"❌ Error adding row: {e}")

@@ -69,4 +69,3 @@ class DeleteRowCommand(Commands):
         db.cursor.execute(query, (self.value,))
         db.commit() 
         print(f"User with {self.column} = '{self.value}' deleted successfully.")
-# --------------Factory Pattern--------------#

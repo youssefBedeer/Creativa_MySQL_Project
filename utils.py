@@ -26,7 +26,7 @@ def dynamic_form(table_name):
             except:
                 pass
 
-        if col_name in ["id", "created_at"]:
+        if col_name in ["id", "created_at","ID"]:
             continue
 
         # اختيار نوع الإدخال
