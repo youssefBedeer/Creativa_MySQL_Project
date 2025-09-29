@@ -4,7 +4,7 @@ from commands.factory import CommandFactory
 from utils import dynamic_form
 
 # ---------------- جلب أسماء الجداول من قاعدة البيانات ----------------
-db = Database(db="real_estate")
+db = Database(db="company")
 db.cursor.execute("SHOW TABLES")
 tables = [row[f"Tables_in_{db.database}"] for row in db.cursor.fetchall()]
 
